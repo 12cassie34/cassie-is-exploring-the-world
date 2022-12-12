@@ -1,13 +1,14 @@
-import { FunctionComponent } from "react";
-import * as React from "react"
+import React, { FunctionComponent, PropsWithChildren } from "react"
 
 import { Box } from '@chakra-ui/react'
 
-const Layout: FunctionComponent = () => {
+import theme from "../@chakra-ui/gatsby-plugin/theme"
+
+const Layout: FunctionComponent<PropsWithChildren> = ({ children }) => {
 
     return (
-        <Box bg='tomato' w='100%' h='100%' p={4} color='white'>
-            This is the Box
+        <Box bg={theme.colors.customs.bg.light} w='100%' h='100%' p={4}>
+            {children}
         </Box>
     )
 }

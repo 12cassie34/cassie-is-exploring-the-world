@@ -13,9 +13,12 @@ import Layout from "../components/Layout"
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
-    <main>
-      <Layout />
-    </main>
+    <Layout>
+      <main>
+        this is going to be the child-layout
+      </main>
+    </Layout>
+
   )
 }
 
