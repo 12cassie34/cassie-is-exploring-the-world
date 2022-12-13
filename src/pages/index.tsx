@@ -1,16 +1,18 @@
-import * as React from "react"
-import type { HeadFC, PageProps } from "gatsby"
+import React, { FC } from "react"
+import type { PageProps } from "gatsby"
 
 import Layout from "../components/Layout"
+import Header from "../components/Header"
+import Main from "../components/Main"
+import SideMenu from "../components/SideMenu"
 
-const IndexPage: React.FC<PageProps> = () => {
+const IndexPage: FC<PageProps> = () => {
   return (
     <Layout>
-      <main>
-        this is going to be the child-layout
-      </main>
+      <Header />
+      <Main />
+      <SideMenu />
     </Layout>
-
   )
 }
 
