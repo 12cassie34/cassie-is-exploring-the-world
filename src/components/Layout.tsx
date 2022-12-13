@@ -10,7 +10,7 @@ const Layout: FunctionComponent<PropsWithChildren> = ({ children }) => {
         <Grid
             templateAreas={`"header header"
                   "nav main"`}
-            gridTemplateColumns={'1fr 100px'}
+            gridTemplateColumns={'1fr 25%'}
             h='100%'
             gap='2'
             color={theme.colors.customs.bg.light}
