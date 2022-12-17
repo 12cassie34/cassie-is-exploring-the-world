@@ -1,6 +1,17 @@
 import React, { FunctionComponent } from 'react';
 
-import { Divider, Grid, GridItem, Heading, Image, Link, Stack, Text } from '@chakra-ui/react';
+import {
+  Divider,
+  Grid,
+  GridItem,
+  Heading,
+  HStack,
+  Image,
+  Link,
+  Stack,
+  Tag,
+  Text
+} from '@chakra-ui/react';
 
 import theme from '../@chakra-ui/gatsby-plugin/theme';
 
@@ -20,7 +31,7 @@ const PostThumbnail: FunctionComponent<PostThumbnailProps> = ({
   articleLink
 }) => (
   <>
-    <Grid h={200} templateRows="repeat(1, 1fr)" templateColumns="repeat(12, 1fr)" gap={6}>
+    <Grid h="45%" templateRows="repeat(1, 1fr)" templateColumns="repeat(12, 1fr)" gap={6}>
       <GridItem w="100%" colSpan={3} rowSpan={2} display="flex">
         <Image
           width={300}
@@ -31,7 +42,7 @@ const PostThumbnail: FunctionComponent<PostThumbnailProps> = ({
         />
       </GridItem>
       <GridItem w="100%" colSpan={9} rowSpan={2}>
-        <Stack mt={6} spacing={2}>
+        <Stack mt={6} mb={6} pr={4} spacing={2}>
           <Heading as="h6" size="xs" color={theme.colors.customs.text.light}>
             {date}
           </Heading>
@@ -41,11 +52,22 @@ const PostThumbnail: FunctionComponent<PostThumbnailProps> = ({
           <Text maxHeight={100} overflow="hidden" color={theme.colors.customs.text.middle}>
             {summary}
           </Text>
-          <Link href={articleLink} isExternal>
-            <Heading as="h6" size="xs" color={theme.colors.customs.text.light}>
-              Read More
-            </Heading>
-          </Link>
+          <HStack>
+            <Tag
+              color={theme.colors.customs.text.light}
+              backgroundColor={theme.colors.customs.bg.light}
+              cursor="pointer"
+            >
+              小說
+            </Tag>
+            <Tag
+              color={theme.colors.customs.text.light}
+              backgroundColor={theme.colors.customs.bg.light}
+              cursor="pointer"
+            >
+              JS
+            </Tag>
+          </HStack>
         </Stack>
       </GridItem>
     </Grid>

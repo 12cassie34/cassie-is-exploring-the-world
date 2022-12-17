@@ -17,7 +17,7 @@ import {
 import theme from '../@chakra-ui/gatsby-plugin/theme';
 
 const SideMenu: FunctionComponent = () => (
-  <GridItem p="6" borderLeft={`2px solid ${theme.colors.customs.bg.dark}`}>
+  <GridItem p="6">
     <Heading
       as="h3"
       size="md"
