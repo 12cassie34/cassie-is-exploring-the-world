@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 
-import { Stack } from '@chakra-ui/react';
+import { Button, Stack } from '@chakra-ui/react';
 
 import theme from '../@chakra-ui/gatsby-plugin/theme';
 
@@ -37,6 +37,7 @@ const MainPost: FunctionComponent = () => (
   <Stack borderRight={`2px solid ${theme.colors.customs.bg.dark}`}>
     {dummyData.map(({ title, bannerSrc, date, summary, articleLink }) => (
       <PostThumbnail
+        key={title}
         title={title}
         bannerSrc={bannerSrc}
         date={date}
@@ -44,6 +45,17 @@ const MainPost: FunctionComponent = () => (
         articleLink={articleLink}
       />
     ))}
+    <Stack>
+      <Button
+        m={10}
+        color={theme.colors.customs.text.light}
+        bg={theme.colors.customs.bg.middle}
+        _hover={{ bg: theme.colors.customs.bg.light }}
+        variant="outline"
+      >
+        Read More
+      </Button>
+    </Stack>
   </Stack>
 );
 
