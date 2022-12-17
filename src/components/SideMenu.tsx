@@ -17,7 +17,7 @@ import {
 import theme from '../@chakra-ui/gatsby-plugin/theme';
 
 const SideMenu: FunctionComponent = () => (
-  <GridItem p="6">
+  <GridItem p="6" rowSpan={11} colSpan={2}>
     <Heading
       as="h3"
       size="md"

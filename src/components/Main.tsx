@@ -5,7 +5,7 @@ import { GridItem } from '@chakra-ui/react';
 import MainPost from './MainPost';
 
 const Main: FunctionComponent = () => (
-  <GridItem pl="2">
+  <GridItem pl="2" rowSpan={11} colSpan={8}>
     <MainPost />
   </GridItem>
 );

@@ -6,9 +6,10 @@ import theme from '../@chakra-ui/gatsby-plugin/theme';
 
 const Header: FunctionComponent = () => (
   <GridItem
+    rowSpan={11}
+    colSpan={2}
     p="8"
     bg={theme.colors.customs.bg.middle}
-    area="header"
     color={theme.colors.customs.text.middle}
   >
     <Heading letterSpacing={2}>Cassie is exploring the world</Heading>
