@@ -4,6 +4,9 @@ import { Grid } from '@chakra-ui/react';
 
 import theme from '../@chakra-ui/gatsby-plugin/theme';
 
+import Header from './Header';
+import SideMenu from './SideMenu';
+
 const Layout: FunctionComponent<PropsWithChildren> = ({ children }) => (
   <Grid
     templateAreas={`"header header"
@@ -13,7 +16,9 @@ const Layout: FunctionComponent<PropsWithChildren> = ({ children }) => (
     gap="2"
     color={theme.colors.customs.bg.light}
   >
+    <Header />
     {children}
+    <SideMenu />
   </Grid>
 );
 
