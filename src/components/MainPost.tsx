@@ -1,5 +1,9 @@
 import React, { FunctionComponent } from 'react';
 
+import { Stack } from '@chakra-ui/react';
+
+import theme from '../@chakra-ui/gatsby-plugin/theme';
+
 import PostThumbnail, { PostThumbnailProps } from './PostThumbnail';
 
 const dummyData: PostThumbnailProps[] = [
@@ -30,7 +34,7 @@ const dummyData: PostThumbnailProps[] = [
 ];
 
 const MainPost: FunctionComponent = () => (
-  <>
+  <Stack borderRight={`2px solid ${theme.colors.customs.bg.dark}`}>
     {dummyData.map(({ title, bannerSrc, date, summary, articleLink }) => (
       <PostThumbnail
         title={title}
@@ -40,7 +44,7 @@ const MainPost: FunctionComponent = () => (
         articleLink={articleLink}
       />
     ))}
-  </>
+  </Stack>
 );
 
 export default MainPost;

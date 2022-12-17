@@ -42,7 +42,7 @@ const PostThumbnail: FunctionComponent<PostThumbnailProps> = ({
         />
       </GridItem>
       <GridItem w="100%" colSpan={9} rowSpan={2}>
-        <Stack mt={6} spacing={2}>
+        <Stack mt={6} mb={6} pr={4} spacing={2}>
           <Heading as="h6" size="xs" color={theme.colors.customs.text.light}>
             {date}
           </Heading>
@@ -52,28 +52,23 @@ const PostThumbnail: FunctionComponent<PostThumbnailProps> = ({
           <Text maxHeight={100} overflow="hidden" color={theme.colors.customs.text.middle}>
             {summary}
           </Text>
-          <Link href={articleLink} isExternal display="flex" justifyContent="flex-end">
-            <Heading as="h6" size="xs" color={theme.colors.customs.text.light}>
-              Read More
-            </Heading>
-          </Link>
+          <HStack>
+            <Tag
+              color={theme.colors.customs.text.light}
+              backgroundColor={theme.colors.customs.bg.light}
+              cursor="pointer"
+            >
+              小說
+            </Tag>
+            <Tag
+              color={theme.colors.customs.text.light}
+              backgroundColor={theme.colors.customs.bg.light}
+              cursor="pointer"
+            >
+              JS
+            </Tag>
+          </HStack>
         </Stack>
-        <HStack mt={2}>
-          <Tag
-            color={theme.colors.customs.text.light}
-            backgroundColor={theme.colors.customs.bg.light}
-            cursor="pointer"
-          >
-            小說
-          </Tag>
-          <Tag
-            color={theme.colors.customs.text.light}
-            backgroundColor={theme.colors.customs.bg.light}
-            cursor="pointer"
-          >
-            JS
-          </Tag>
-        </HStack>
       </GridItem>
     </Grid>
     <Divider />
