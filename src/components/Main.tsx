@@ -1,15 +1,13 @@
-import React, { FunctionComponent } from "react"
+import React, { FunctionComponent } from 'react';
 
-import { GridItem } from '@chakra-ui/react'
+import { GridItem } from '@chakra-ui/react';
 
-import MainPost from "./MainPost"
+import MainPost from './MainPost';
 
-const Main: FunctionComponent = () => {
-    return (
-        <GridItem pl='2'>
-            <MainPost />
-        </GridItem>
-    )
-}
+const Main: FunctionComponent = () => (
+  <GridItem pl="2">
+    <MainPost />
+  </GridItem>
+);
 
-export default Main
+export default Main;
