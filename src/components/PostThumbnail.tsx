@@ -1,24 +1,13 @@
 import React, { FunctionComponent } from 'react';
 
-import {
-  Divider,
-  Grid,
-  GridItem,
-  Heading,
-  HStack,
-  Image,
-  Link,
-  Stack,
-  Tag,
-  Text
-} from '@chakra-ui/react';
+import { Divider, Grid, GridItem, Heading, Image, Link, Stack, Text } from '@chakra-ui/react';
 
 import theme from '../@chakra-ui/gatsby-plugin/theme';
+import { ArticleInterface } from '../libs/types';
 
-export interface PostThumbnailProps {
-  title: string;
-  bannerSrc: string;
-  date: string;
+import Tags from './Tags';
+
+export interface PostThumbnailProps extends ArticleInterface {
   summary: string;
   articleLink: string;
 }
@@ -28,7 +17,8 @@ const PostThumbnail: FunctionComponent<PostThumbnailProps> = ({
   bannerSrc,
   date,
   summary,
-  articleLink
+  articleLink,
+  tags
 }) => (
   <>
     <Grid h="45%" templateRows="repeat(1, 1fr)" templateColumns="repeat(12, 1fr)" gap={6}>
@@ -52,22 +42,7 @@ const PostThumbnail: FunctionComponent<PostThumbnailProps> = ({
           <Text maxHeight={100} overflow="hidden" color={theme.colors.customs.text.middle}>
             {summary}
           </Text>
-          <HStack>
-            <Tag
-              color={theme.colors.customs.text.light}
-              backgroundColor={theme.colors.customs.bg.light}
-              cursor="pointer"
-            >
-              小說
-            </Tag>
-            <Tag
-              color={theme.colors.customs.text.light}
-              backgroundColor={theme.colors.customs.bg.light}
-              cursor="pointer"
-            >
-              JS
-            </Tag>
-          </HStack>
+          <Tags tagArr={tags} />
         </Stack>
       </GridItem>
     </Grid>
