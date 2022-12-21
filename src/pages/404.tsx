@@ -1,44 +1,30 @@
-import * as React from 'react';
+import React, { FunctionComponent } from 'react';
 import { Link, HeadFC, PageProps } from 'gatsby';
 
-const pageStyles = {
-  color: '#232129',
-  padding: '96px',
-  fontFamily: '-apple-system, Roboto, sans-serif, serif'
-};
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320
-};
+import { Flex, Heading, Stack } from '@chakra-ui/react';
 
-const paragraphStyles = {
-  marginBottom: 48
-};
-const codeStyles = {
-  color: '#8A6534',
-  padding: 4,
-  backgroundColor: '#FFF4DB',
-  fontSize: '1.25rem',
-  borderRadius: 4
-};
+import theme from '../@chakra-ui/gatsby-plugin/theme';
 
-const NotFoundPage: React.FC<PageProps> = () => (
-  <main style={pageStyles}>
-    <h1 style={headingStyles}>Page not found</h1>
-    <p style={paragraphStyles}>
-      Sorry 😔, we couldn’t find what you were looking for.
-      <br />
-      {process.env.NODE_ENV === 'development' ? (
-        <>
-          <br />
-          Try creating a page in <code style={codeStyles}>src/pages/</code>.
-          <br />
-        </>
-      ) : null}
-      <br />
-      <Link to="/">Go home</Link>.
-    </p>
+const NotFoundPage: FunctionComponent<PageProps> = () => (
+  <main>
+    <Flex align="center" justify="center" width="100vw" height="100vh">
+      <Stack
+        spacing={4}
+        p={24}
+        border={`2px solid ${theme.colors.customs.text.dark}`}
+        borderRadius={8}
+      >
+        <Heading as="h2" size="2xl">
+          Oops...
+        </Heading>
+        <Heading as="h5" size="sm">
+          看起來你找到了一個空空的寶箱，我們還是
+        </Heading>
+        <Heading as="h5" size="sm" color={theme.colors.customs.text.middle}>
+          <Link to="/">回家去吧</Link>
+        </Heading>
+      </Stack>
+    </Flex>
   </main>
 );
 
