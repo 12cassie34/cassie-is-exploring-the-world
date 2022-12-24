@@ -1,4 +1,8 @@
 import type { GatsbyConfig } from 'gatsby';
+import dotenv from 'dotenv';
+
+dotenv.config();
+const connectionString = process.env.MONGODB_CONNECTION;
 
 const config: GatsbyConfig = {
   siteMetadata: {
@@ -52,6 +56,14 @@ const config: GatsbyConfig = {
          * if false, this plugin will not use <ColorModeProvider />
          */
         isUsingColorMode: true
+      }
+    },
+    {
+      resolve: `gatsby-source-mongodb`,
+      options: {
+        connectionString,
+        dbName: `sample_airbnb`,
+        collection: `listingsAndReviews`
       }
     }
   ]
