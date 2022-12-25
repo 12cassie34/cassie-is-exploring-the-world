@@ -1,25 +1,21 @@
-import { useCallback, useEffect, useState } from 'react';
-
-const getWindowDimensions = () => {
-  const { innerWidth, innerHeight } = window;
-
-  return { innerWidth, innerHeight };
-};
+import { useEffect, useState } from 'react';
 
 const useWindowDimensions = () => {
-  const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
-
-  const handleResize = useCallback(() => {
-    setWindowDimensions(getWindowDimensions());
-  }, []);
+  const [innerWidth, setInnerWidth] = useState(0);
+  const [innerHeight, setInnerHeight] = useState(0);
 
   useEffect(() => {
+    const handleResize = () => {
+      setInnerWidth(window.innerWidth);
+      setInnerHeight(window.innerHeight);
+    };
+    handleResize();
     window.addEventListener('resize', handleResize);
 
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  return windowDimensions;
+  return { innerWidth, innerHeight };
 };
 
 export default useWindowDimensions;
