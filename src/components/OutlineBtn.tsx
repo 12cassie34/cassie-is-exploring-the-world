@@ -6,9 +6,10 @@ import theme from '../@chakra-ui/gatsby-plugin/theme';
 
 interface OutlineBtnProps {
   buttonContent: string | ReactElement;
+  handleClick?: () => void;
 }
 
-const OutlineBtn: FunctionComponent<OutlineBtnProps> = ({ buttonContent }) => (
+const OutlineBtn: FunctionComponent<OutlineBtnProps> = ({ buttonContent, handleClick }) => (
   <Button
     p={3}
     height="100%"
@@ -17,9 +18,14 @@ const OutlineBtn: FunctionComponent<OutlineBtnProps> = ({ buttonContent }) => (
     _hover={{ bg: theme.colors.customs.bg.light }}
     whiteSpace="unset"
     variant="outline"
+    onClick={handleClick}
   >
     {buttonContent}
   </Button>
 );
+
+OutlineBtn.defaultProps = {
+  handleClick: () => {}
+};
 
 export default OutlineBtn;
