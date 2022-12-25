@@ -10,6 +10,7 @@ const Footer: FunctionComponent = () => {
   return (
     <GridItem
       colSpan={12}
+      rowSpan={[2]}
       mt={-2}
       p="8"
       bg={theme.colors.customs.bg.dark}

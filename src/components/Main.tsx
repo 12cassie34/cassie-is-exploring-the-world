@@ -9,9 +9,9 @@ import MainPost from './MainPost';
 const Main: FunctionComponent = () => (
   <GridItem
     pl="2"
-    rowSpan={11}
-    colSpan={8}
-    borderRight={`2px solid ${theme.colors.customs.bg.dark}`}
+    rowSpan={[9, 11]}
+    colSpan={[12, 12, 12, 12, 8]}
+    borderRight={['none', `2px solid ${theme.colors.customs.bg.dark}`]}
   >
     <MainPost />
   </GridItem>
