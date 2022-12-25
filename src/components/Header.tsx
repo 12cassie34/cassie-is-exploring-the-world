@@ -23,7 +23,7 @@ const Header: FunctionComponent = () => {
         <Heading as="h6" size="xs">
           隨筆札記部落格，希望什麼都有，打開就是個驚喜
         </Heading>
-        {innerWidth < 1200 && <MobileSideMenu />}
+        {innerWidth <= 1200 && <MobileSideMenu />}
       </VStack>
     </GridItem>
   );

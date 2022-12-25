@@ -14,7 +14,13 @@ const Layout: FunctionComponent<PropsWithChildren> = ({ children }) => {
 
   return (
     <Grid
-      templateRows={['repeat(5, 1fr)', 'repeat(12, 1fr)']}
+      templateRows={[
+        '300px 1fr 100px',
+        '200px 1fr 100px',
+        '200px 1fr 100px',
+        '200px 1fr 100px',
+        'repeat(12, 1fr)'
+      ]}
       templateColumns="repeat(12, 1fr)"
       gap="2"
       color={theme.colors.customs.bg.light}
