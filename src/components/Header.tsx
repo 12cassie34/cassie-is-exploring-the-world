@@ -12,8 +12,8 @@ const Header: FunctionComponent = () => {
 
   return (
     <GridItem
-      rowSpan={[1, 1, 11]}
-      colSpan={[12, 12, 2]}
+      rowSpan={[1, 1, 1, 1, 11]}
+      colSpan={[12, 12, 12, 12, 2]}
       p="8"
       bg={theme.colors.customs.bg.middle}
       color={theme.colors.customs.text.middle}

@@ -10,7 +10,7 @@ const Main: FunctionComponent = () => (
   <GridItem
     pl="2"
     rowSpan={[9, 11]}
-    colSpan={[12, 12, 8]}
+    colSpan={[12, 12, 12, 12, 8]}
     borderRight={['none', `2px solid ${theme.colors.customs.bg.dark}`]}
   >
     <MainPost />
